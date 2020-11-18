@@ -1,60 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-const Header = (props) => {
 
-  return (
-    <div>
-      <h1>
-        {props.course}
-      </h1>
-    </div>
-  )
-
-}
-
-const Content = (props) => {
-
-  return (
-    <div>
-      <Part content = {props.content[0].name} no = {props.content[0].exercises}/>
-      <Part content = {props.content[1].name} no = {props.content[1].exercises}/>
-      <Part content = {props.content[2].name} no = {props.content[2].exercises}/>
-    </div>
-  )
-
-}
-
-const Part = (props) => {
-
-  return (
-
-    <div>
-      <p>
-        {props.content} {props.no}
-      </p>
-    </div>
-
-  )
-
-}
-
-const Total = (props) => {
-
-  
-
-  return (
-   
-    <div>
-      <p>  
-        Number of exercises {props.content[0].exercises + props.content[1].exercises + props.content[2].exercises}
-      </p>
-    </div>
-    
-
-  )
-
-}
 
 const App = () => {
   const course = 'Half Stack application development'
@@ -81,10 +28,13 @@ const App = () => {
 
     <div>
 
-      <Header course={course} />
-      <Content content={parts}  />
-      <Total content={parts} />
-
+      <h1>{Object.values(course)}</h1>
+      
+        <p>{parts[0].name} {parts[0].exercises}</p>
+        <p>{parts[1].name} {parts[1].exercises}</p>
+        <p>{parts[2].name} {parts[2].exercises}</p>
+        <p>Number of exercises {parts[0].exercises+parts[1].exercises+parts[2].exercises}</p>
+        
     </div>
 
   )
